@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import 'package:restaurant/provider/register_provider.dart';
 import 'package:restaurant/view/login_view.dart';
 
 class RegisterView extends StatefulWidget {
@@ -23,6 +25,9 @@ final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
+    RegisterProvider registerAuthProvider =
+        Provider.of<RegisterProvider>(context);
+
     return Scaffold(
       backgroundColor: Color(0xff679286),
       key: _scaffoldKey,
@@ -76,7 +81,7 @@ class _RegisterViewState extends State<RegisterView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Comfort-қа қош келдіңіз',
+                            'Damdy-ге қош келдіңіз',
                             style: TextStyle(
                               fontSize: 35,
                               fontWeight: FontWeight.w700,
@@ -86,7 +91,7 @@ class _RegisterViewState extends State<RegisterView> {
                           ),
                           SizedBox(height: 20),
                           Text(
-                            'Тіркелу үшін comfort қосымшасына\nтіркелу - бұл тегін',
+                            'Тіркелу үшін damdy қосымшасына\nтіркелу - бұл тегін',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
@@ -268,13 +273,13 @@ class _RegisterViewState extends State<RegisterView> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: GestureDetector(
                       onTap: () {
-                        // registerAuthProvider.registerValidation(
-                        //   email: email,
-                        //   password: password,
-                        //   fullName: fullName,
-                        //   phone: phone,
-                        //   context: context,
-                        // );
+                        registerAuthProvider.registerValidation(
+                          email: email,
+                          password: password,
+                          fullName: fullName,
+                          phone: phone,
+                          context: context,
+                        );
                       },
                       child: Container(
                         height: 68,

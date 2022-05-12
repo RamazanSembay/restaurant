@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:restaurant/view/register_view.dart';
+
+import '../provider/login_provider.dart';
 
 class LoginView extends StatefulWidget {
   @override
@@ -17,6 +20,8 @@ bool obserText = true;
 class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
+    LoginProvider loginProvider = Provider.of<LoginProvider>(context);
+
     return Scaffold(
       backgroundColor: Color(0xff679286),
       body: Container(
@@ -67,7 +72,7 @@ class _LoginViewState extends State<LoginView> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Comfort Жүйесіне\nКіріңіз',
+                          'Damdy Жүйесіне\nКіріңіз',
                           style: TextStyle(
                             fontSize: 35,
                             fontWeight: FontWeight.w700,
@@ -154,7 +159,7 @@ class _LoginViewState extends State<LoginView> {
                         height: 60,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                         color: Colors.white,
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: TextFormField(
@@ -202,11 +207,11 @@ class _LoginViewState extends State<LoginView> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: GestureDetector(
                     onTap: () {
-                      // loginProvider.loginValidation(
-                      //   email: email,
-                      //   password: password,
-                      //   context: context,
-                      // );
+                      loginProvider.loginValidation(
+                        email: email,
+                        password: password,
+                        context: context,
+                      );
                       email.text = '';
                       password.text = '';
                     },
