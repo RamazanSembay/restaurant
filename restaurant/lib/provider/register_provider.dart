@@ -69,8 +69,8 @@ class RegisterProvider with ChangeNotifier {
                   "Почта": email.text,
                   "Пароль": password.text,
                   "Номер телефон": phone.text,
-                  "Город": '',
-                  "Адрес": '',
+                  "Город": 'Нету',
+                  "Адрес": 'Нету',
                   "Картинка":
                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmRl3d2-pvsay_8CnBFoGlXtZ5jybJr9PkbDAL6bVN-CZWsqfsMi4Q5-ezCMew_lhqjvo&usqp=CAU',
                   "Дата": DateTime.now(),
