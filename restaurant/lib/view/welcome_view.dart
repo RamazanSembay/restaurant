@@ -7,10 +7,10 @@ class WelcomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff679286),
-      body: ListView(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.only(
@@ -21,6 +21,10 @@ class WelcomeView extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+            ],
+          ),
+          Column(
+            children: [
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, bottom: 15),
                 child: Text(
@@ -45,65 +49,72 @@ class WelcomeView extends StatelessWidget {
                   ),
                 ),
               ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Get.to(LoginView());
-                    },
-                    child: Container(
-                      height: 40,
-                      width: 80,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'өткізу',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'Montserrat',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: InkWell(
+            ],
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 50),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    InkWell(
                       onTap: () {
                         Get.to(LoginView());
                       },
                       child: Container(
-                        height: 80,
+                        height: 40,
                         width: 80,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Colors.white,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image(
-                              image: AssetImage('images/next.png'),
-                              width: 32,
-                              fit: BoxFit.cover,
+                            Text(
+                              'өткізу',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'Montserrat',
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: InkWell(
+                        onTap: () {
+                          Get.to(LoginView());
+                        },
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image(
+                                image: AssetImage('images/next.png'),
+                                width: 32,
+                                fit: BoxFit.cover,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

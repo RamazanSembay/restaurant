@@ -168,7 +168,7 @@ class _LoginViewState extends State<LoginView> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                            color: Colors.black,
                             fontFamily: 'Montserrat',
                           ),
                           decoration: InputDecoration(
